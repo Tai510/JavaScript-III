@@ -52,14 +52,15 @@ function CharacterStats(stat) {
   * should inherit takeDamage() from CharacterStats
 */
   function Humanoid(option) {
-  GameObject.call(this , option);
+    CharacterStats.call(this , option
+  );
   this.team = option.team;
   this.weapons = option.weapons;
   this.language = option.language;
 }
-  CharacterStats.prototype = Object.create(CharacterStats.prototype);
-  CharacterStats.prototype.destroy = function() {
-  return `${this.name} offers a greetign in ${this.language}.`;
+  Humanoid.prototype = Object.create(CharacterStats.prototype);
+  Humanoid.prototype.greet = function() {
+  return `${this.name} offers a greeting in ${this.language}.`;
 };
  
 /*
@@ -137,7 +138,13 @@ function CharacterStats(stat) {
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function. 
   function Villain(bad) {
   GameObject.call(this , bad);
-  
+  this.name = bad.name;
+  this.power = bad.power;
   } 
+  Humanoid.prototype = Object.create(Humanoid.prototype);
+  Humanoid.prototype.endGame = function() {
+  return `${this.name} is here to challenge you`;
+  }
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
+
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
