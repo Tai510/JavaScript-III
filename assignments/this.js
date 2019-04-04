@@ -24,12 +24,12 @@ function helloWorld (name) {
 const avengers = {
     name: "Iron Man" ,
     age: 38 ,
-    networth: "100 billion dollars" ,
+    networth: "100 billion dollars",
     hobby: function() {
-    return `${this.name} loves to spend his ${this.networth}`;
+    return `${this.name} like to have fun with his ${this.networth}`;
     }
     }
-    console.log(avengers.hobby); 
+    console.log(avengers.hobby()); 
 // code example for Implicit Binding
 
 // Principle 3
