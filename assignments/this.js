@@ -35,16 +35,16 @@ const avengers = {
 // Principle 3
 function movie(movieName, movieMake) {
     this.movieName = movieName;
-    this.movieName = movieMake;
-    this.fullName = function() {
-      console.log(`Name: ${this.movieName} ${this.movieName}`);
+    this.movieMake = movieMake;
+    this.boxOffice = function() {
+      console.log(`Name: ${this.movieName} made ${this.movieMake}`);
     };
   }
   const blackPanther = new movie("Black Panther", "1 Billion");
   const Avengers = new movie("Infinity War", "2 Billion");
   const deadPool = new movie("DeadPool", "800 Million");
 
-  Avengers.fullName();
+  Avengers.boxOffice();
 // code example for New Binding
 
 // Principle 4
@@ -52,9 +52,9 @@ const person = {
     "name":"Spider-man"
   }
 
-  function introduction(power1,power2,power3){
+  function abilities(power1,power2,power3){
     return `Hello, my name is ${this.name} and my abilities are: ${power1},${power2},${power3}`;
   }
   const skills = ["Super Strength","Shooting Web","Spider sense"];
-  console.log(introduction.call(person,...skills));
+  console.log(abilities.call(person,...skills));
 // code example for Explicit Binding
